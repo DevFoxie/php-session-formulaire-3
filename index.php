@@ -1,5 +1,7 @@
 <?php
 session_start();
+setcookie('login', $_POST['login']);
+setcookie('password', $_POST['password']);
 ?>
 
 <!DOCTYPE html>
@@ -31,26 +33,25 @@ session_start();
     <br>
 
     <a href="index2.php?lastname=Merniz&firstname=Hakim&age=26">vers la 2ème page</a>
-
-    <!-- Exercice 3 :  -->
-    <?php
-    if (isset($_POST['login'])) // Si le formulaire a été envoyé...
-    {
-        setcookie('login', $_POST['login'], time() + 365 * 24 * 3600, null, null, false, true); // On créé le cookie, c'est IMPORTANT !
-        header("Location: index.php"); // Et on actualise la page pour que ce script marche à 100% !!!
-    } else if (isset($_POST['password'])) {
-        setcookie('password', $_POST['password'], time() + 365 * 24 * 3600, null, null, false, true);
-        header("Location: index.php");
-    }
-    ?>
+    <br>
+    <a href="index4.php">vers la 3ème page</a>
 
     <div class="form-style-8">
         <h2>Connectez vous à votre compte !</h2>
         <form action="index3.php" method="post">
-            <input type="login" name="login" placeholder="Identifiant" />
-            <input type="password" name="password" placeholder="Mot de passe" />
+            <input type="login" maxlength="20" name="login" id="login" placeholder="Identifiant" />
+            <input type="password" maxlength="20" name="password" id="password" placeholder="Mot de passe" />
             <input type="submit" value="Valider" />
         </form>
+    </div>
+
+    <div class="picture">
+        <img src="https://www.freepnglogos.com/uploads/php-logo-png/php-logo-php-elephant-logo-vectors-download-5.png" >
+        <img src="https://www.freepnglogos.com/uploads/php-logo-png/php-logo-php-elephant-logo-vectors-download-5.png" >
+        <img src="https://www.freepnglogos.com/uploads/php-logo-png/php-logo-php-elephant-logo-vectors-download-5.png" >
+        <img src="https://www.freepnglogos.com/uploads/php-logo-png/php-logo-php-elephant-logo-vectors-download-5.png" >
+        <img src="https://www.freepnglogos.com/uploads/php-logo-png/php-logo-php-elephant-logo-vectors-download-5.png" >
+        <img src="https://www.freepnglogos.com/uploads/php-logo-png/php-logo-php-elephant-logo-vectors-download-5.png" >
     </div>
 
     <script src="./js/custom.js"></script>
